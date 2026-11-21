@@ -1,0 +1,9 @@
+FROM debian:latest
+
+RUN apt-get update && apt-get install -y gcc gdb git
+
+WORKDIR /usr/src/
+
+COPY main.c program.c
+
+CMD gcc program.c -o program && ./program
